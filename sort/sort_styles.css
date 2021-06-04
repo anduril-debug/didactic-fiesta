@@ -4,10 +4,10 @@
   width: 1200px;
   height: 600px;
   margin-top: 50px;
-  overflow-x: hidden;
+  overflow: hidden;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows:    1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 3px;
+  grid-gap: 2px 7px;
 
 }
 
@@ -24,4 +24,15 @@
 
 .single-box:hover {
   background-color: rgb(247, 132, 61);
+}
+
+
+.col-quantity {
+  background-color : wheat;
+  text-align: center;
+  color: rgb(43, 21, 21);
+  font-family: 'Oswald', sans-serif;}
+
+.clicked {
+  background-color: blueviolet;
 }
