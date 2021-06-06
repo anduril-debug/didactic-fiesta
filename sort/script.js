@@ -29,7 +29,6 @@ function clickBox(){
   for (var i = 1; i <= 768; i++) {
     var box = boxes[i]
     box.onclick = function(e){
-      console.log(e.target)
       const x = e.target.getAttribute("X")
       const y = e.target.getAttribute("Y")
 
@@ -83,7 +82,6 @@ function createQuantityRow(){
 
 //Updating quantity row counts
 function updateQuantity(redBoxCount,colNumber){
-  console.log(`${redBoxCount} witeli ujra, ${colNumber} columnze`)
   
   let quantityBox = document.querySelectorAll(`[x = "${colNumber}"]`)
   quantityBox = quantityBox[quantityBox.length - 1]
@@ -92,3 +90,64 @@ function updateQuantity(redBoxCount,colNumber){
 
   return false 
 }
+
+
+//filling randomly boxes
+
+function randomFill(){
+
+  for (let i = 1; i <= 32; i++){
+
+ 
+    let entireCol = document.querySelectorAll(`[x = "${i}"]`)
+
+    const randomNum = Math.floor(Math.random() * 24) + 1
+
+    //quantity box color
+    entireCol[entireCol.length - 1].style.backgroundColor = "wheat"
+  
+    for (let j = 0; j <= randomNum; j++){
+      entireCol[j].classList.remove("clicked")
+    }
+  
+    for (let j = randomNum-1; j < 24; j++){
+      entireCol[j].classList.add("clicked")
+    }
+  
+  
+  
+        
+    const redBoxCount = 25 - parseInt(randomNum)
+    updateQuantity(redBoxCount,i)
+  
+
+
+  }
+
+
+
+}
+
+
+
+function doSwap(col1, col2){
+
+  let column1 = document.querySelectorAll(`[x = "${col1}"]`)
+  let column2 = document.querySelectorAll(`[x = "${col2}"]`)
+
+
+
+  for (let i = 0; i < 25; i++){
+
+
+    column1[i].style.gridColumn = col2
+    column1[i].setAttribute("x",col2)
+    column2[i].style.gridColumn = col1
+    column2[i].setAttribute("x",col1)
+
+  }
+
+
+}
+
+

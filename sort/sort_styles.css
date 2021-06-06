@@ -5,8 +5,8 @@
   height: 600px;
   margin-top: 50px;
   overflow: hidden;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows:    1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(32,1fr);
+  grid-template-rows:    repeat(24,1fr);
   grid-gap: 2px 7px;
 
 }
@@ -35,4 +35,44 @@
 
 .clicked {
   background-color: blueviolet;
+}
+
+
+.menu {
+  text-align: center;
+  margin: auto;
+  margin-top: 70px;
+  display: grid;
+  width: 1200px;
+  grid-template-columns: 3fr 3fr 3fr;
+}
+
+.menu button {
+    width: 50%;
+    height: 60px;
+    margin: auto;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: blueviolet;
+    color: white;
+
+}
+
+.menu select {
+
+  width: 50%;
+  height: 60px;
+  margin: auto;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: blueviolet;
+  color: white;
+  outline: none;
+
 }
