@@ -1,6 +1,6 @@
 
 main();
-clickBox()
+clickBox();
 
 // creating main table
 function main(){
@@ -28,29 +28,36 @@ function clickBox(){
   boxes = document.getElementsByClassName('single-box')
   for (var i = 1; i <= 768; i++) {
     var box = boxes[i]
+
+
     box.onclick = function(e){
-      const x = e.target.getAttribute("X")
-      const y = e.target.getAttribute("Y")
+      //if button is disabled then don't check boxes
+      notDisabled = document.getElementById("sort-btn").getAttribute("disabled")
+      if (!notDisabled){
+        const x = e.target.getAttribute("X")
+        const y = e.target.getAttribute("Y")
 
-      let entireCol = document.querySelectorAll(`[x = "${x}"]`)
+        let entireCol = document.querySelectorAll(`[x = "${x}"]`)
 
 
-      //quantity box color
-      entireCol[entireCol.length - 1].style.backgroundColor = "wheat"
+        //quantity box color
+        entireCol[entireCol.length - 1].style.backgroundColor = "wheat"
 
-      for (let i = 0; i <= y; i++){
-        entireCol[i].classList.remove("clicked")
+        for (let i = 0; i <= y; i++){
+          entireCol[i].classList.remove("clicked")
+        }
+
+        for (let i = y-1; i < 24; i++){
+          entireCol[i].classList.add("clicked")
+        }
+
+
+
+
+        const redBoxCount = 25 - parseInt(y)
+        updateQuantity(redBoxCount,x)
+
       }
-
-      for (let i = y-1; i < 24; i++){
-        entireCol[i].classList.add("clicked")
-      }
-
-
-
-
-      const redBoxCount = 25 - parseInt(y)
-      updateQuantity(redBoxCount,x)
 
     }
   }
@@ -159,14 +166,21 @@ function beep() {
 
 
 
+
 function startSort(){
 
   let algorithm = document.getElementById("algs").value
 
   switch (algorithm) {
+
     case "bubble-sort":
+
+      boxes = document.getElementsByClassName("single-box")
+
+
       bubbleSort()
       break;
+
     default:
       console.log("Choose algorithm!")
 

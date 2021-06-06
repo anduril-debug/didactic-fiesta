@@ -1,9 +1,12 @@
 
 async function bubbleSort(){
 
+
     let swap_count = 0
     const sortBtn = document.getElementById("sort-btn")
+    const randBtn = document.getElementById("random-fill-btn")
     sortBtn.setAttribute("disabled",true)
+    randBtn.setAttribute("disabled",true)
 
 
     for (let i = 1; i < 32; i++){
@@ -45,6 +48,7 @@ async function bubbleSort(){
       info_field.appendChild(swap_span)
 
       sortBtn.removeAttribute("disabled")
+      randBtn.removeAttribute("disabled")
 
 
   }
