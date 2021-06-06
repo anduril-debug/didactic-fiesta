@@ -61,6 +61,10 @@
 
 }
 
+.menu button[disabled]{
+  background-color: gray;
+}
+
 .menu select {
 
   width: 50%;
@@ -74,5 +78,18 @@
   background-color: blueviolet;
   color: white;
   outline: none;
+}
 
+.sort-checked {
+  background-color: red;
+}
+
+.info {
+  text-align: center;
+  margin: auto;
+  margin-top: 70px;
+  font-size: 20px;
+  display: grid;
+  width: 1200px;
+  grid-template-columns: 3fr 3fr 3fr;
 }
