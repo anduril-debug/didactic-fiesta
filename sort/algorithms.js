@@ -15,8 +15,8 @@ async function bubbleSort(){
 
           let firstCol = document.querySelectorAll(`[x = "${j}"]`)
           firstCol.forEach((item) => {
-            if(item.classList.length == 2){
-              item.classList.add("sort-checked")
+            if(item.classList.length == 2){              // is classList.length == 2 add class that's colors whole column
+              item.classList.add("sort-checked")         // coloring red whole column
             }
           });
 
@@ -52,6 +52,32 @@ async function bubbleSort(){
 
 
   }
+
+
+
+function mergeSortStart(){
+
+  let swap_count = 0
+  const sortBtn = document.getElementById("sort-btn")
+  const randBtn = document.getElementById("random-fill-btn")
+  sortBtn.setAttribute("disabled",true)
+  randBtn.setAttribute("disabled",true)
+
+
+  quantitiesHTML = document.getElementsByClassName("col-quantity")
+  quantities = []
+
+  for (let i = 0; i < 32; i++){
+    quantities.push({ "col" : i+1 ,"value" : parseInt(quantitiesHTML[i].innerHTML)})
+  }
+
+
+
+
+
+}
+
+
 
 
 
